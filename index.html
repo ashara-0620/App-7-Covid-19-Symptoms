@@ -104,13 +104,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1> 
+	<h1>Cold, Allergies, Flu, or COVID-19?</h1> 
 <!-- /this determines the header of the questionarre -->
 </div> 
 <!-- /this creates a line break in the website -->
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Are you suffering from symptoms but aren't sure whether is it allergies, a cold, the flu, or COVID-19? Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-green w3-round"> Get Started </a> <!-- /this shows a round green button reading get started -->
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
@@ -125,11 +125,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<!-- /this creates a line break in the website -->
 	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p> <!-- /this reads the content of question 1 asking if your eyes are watery or itchy -->
+        <p>What is the average length of your symptoms?</p> <!-- /this reads the content of question 1 -->
 </div> 
 <!-- /this creates a line break in the website -->
-	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-red w3-round"> Yes </a> <!-- /this shows a round red button reading yes -->
-	<a href="#two" onclick="coldAdd();" class="w3-btn w3-green w3-round"> No </a> <!-- /this shows a round green button reading no -->
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-red w3-round"> Several weeks </a> <!-- /this shows a round red button  -->
+	<a href="#two" onclick="coldAdd();" class="w3-btn w3-green w3-round"> Less than 14 days </a> <!-- /this shows a round green button  -->
+	<a href="#two" onclick="fluAdd();" class="w3-btn w3-blue w3-round"> 7-14 days </a> <!-- /this shows a round blue button -->
+	<a href="#two" onclick="covid19Add();" class="w3-btn w3-yellow w3-round"> 7-25 days </a> <!-- /this shows a round yellow button -->
 </div> 
 </div>
 <!-- /this creates a line break in the website -->
