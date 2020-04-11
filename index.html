@@ -27,7 +27,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
 <head> 
-      <title>Cold or Allergies?</title>  
+      <title>Cold, Allergies, Flu, or COVID-19?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -66,10 +66,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         }
 	
 	 function results(){ //this function calculates the total result percentage
-		allergyPercent = (allergy_count/4) *100; //this variable determines the allergy percent by adding the allergy count over the total 
-		coldPercent = (cold_count/4) *100; //this variable determines the cold percent by adding the cold count over the total
+		allergyPercent = (allergy_count/11) *100; //this variable determines the allergy percent by adding the allergy count over the total 
+		coldPercent = (cold_count/11) *100; //this variable determines the cold percent by adding the cold count over the total
+		 fluPercent = (flu_count/11) *100; //this variable determines the flu percent by adding the flu count over the total 
+		covid19Percent = (covid19_count/11) *100; //this variable determines the covid percent by adding the covid count over the total 
 		 var resultText = document.getElementById("results"); //this variable determines the result text 
-           	resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent; 
+           	resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent + "<br> Probability it is the flu = " + fluPercent + "<br> Probability it is COVID-19 = " + covid19Percent;
+		
         } //the result text calculates the probability of allergies and probability of cold by using the variables for allergypercent and coldpercent and dividing by 6 then multiplying by 100
 	
 
