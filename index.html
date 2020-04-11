@@ -1,0 +1,207 @@
+<!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Tim Riedel
+Author 2
+ 
+Further Information: 
+http://cns.utexas.edu/fri
+ 
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+The goal of this code is to diagnose whether or not someone is suffering from a cold, allergies, flu, or COVID-19 through a series of questions to help diagnose. 
+ 
+Known Issues:
+The known issues are that allergy, cold, flu, and COVID-19 symptoms are very similar and it is difficult to determine which one that you are suffering from.  
+
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
+<head> 
+      <title>Cold or Allergies?</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+    
+
+
+<script> 
+        var allergy_count = 0; //this allows the allergy count to begin at zero
+        var cold_count = 0; //this allows the cold count to begin at zero
+	var allergyPercent = 0; //this allows the allergy percent to begin at zero
+	var coldPercent = 0; //this allows the cold percent to begin at zero
+	 var resultText = document.getElementById("results"); // intended for the results page
+
+
+        function allergyAdd(){ //this function describes the way the allergy count will be calculated
+            allergy_count = allergy_count + 1; //this function adds 1 to the allergy value
+
+        }
+
+        function coldAdd(){ //this function describes the way the cold count will be calculated
+            cold_count = cold_count + 1; //this function adds 1 to the cold value
+
+        }	
+	 function results(){ //this function calculates the total result percentage
+		allergyPercent = (allergy_count/4) *100; //this variable determines the allergy percent by adding the allergy count over the total 
+		coldPercent = (cold_count/4) *100; //this variable determines the cold percent by adding the cold count over the total
+		 var resultText = document.getElementById("results"); //this variable determines the result text 
+           	resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent; 
+        } //the result text calculates the probability of allergies and probability of cold by using the variables for allergypercent and coldpercent and dividing by 6 then multiplying by 100
+	
+
+  </script> //script contains scripting statements for common java use for image manipulation, form validation and dynamic changes
+</head>
+
+
+<style>	//this determines the format of the website body and page wise
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1> 
+<!-- /this determines the header of the questionarre -->
+</div> 
+<!-- /this creates a line break in the website -->
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-green w3-round"> Get Started </a> <!-- /this shows a round green button reading get started -->
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<div class="page" id="one">
+<!-- /this classifies the page as being page one -->	
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question #1</h1> <!-- /this reads the title of the first page as question 1 -->
+	</div>
+	<!-- /this creates a line break in the website -->
+	
+    	<div id="content" class="w3-container">
+        <p>Are your eyes watery or itchy?</p> <!-- /this reads the content of question 1 asking if your eyes are watery or itchy -->
+</div> 
+<!-- /this creates a line break in the website -->
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-red w3-round"> Yes </a> <!-- /this shows a round red button reading yes -->
+	<a href="#two" onclick="coldAdd();" class="w3-btn w3-green w3-round"> No </a> <!-- /this shows a round green button reading no -->
+</div> 
+</div>
+<!-- /this creates a line break in the website -->
+	
+<div class="page" id="two">
+	<!-- /this classifies the page as being page two -->	
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question #2</h1> <!-- /this reads the title of the first page as question 2 -->
+	</div>
+	<!-- /this creates a line break in the website -->
+	
+	<div id="content" class="w3-container">
+	<p>Do you have a fever?</p> <!-- /this reads the content of question 2 asking if you have a fever -->
+	<a href="#three" onclick="coldAdd();" class="w3-btn w3-red w3-round"> Yes </a> <!-- /this shows a round red button reading yes -->
+	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-green w3-round"> No </a> <!-- /this shows a round green button reading no -->
+</div> 
+</div>
+</div>	
+<!-- /this creates a line break in the website -->
+	
+<div class="page" id="three">
+	<!-- /this classifies the page as being page three -->	
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question #3</h1> <!-- /this reads the title of the first page as question 3 -->
+	</div>
+	<!-- /this creates a line break in the website -->
+	
+	<div id="content" class="w3-container">
+	<p>Do you have a sore throat?</p> <!-- /this reads the content of question 3 asking if you have a sore throat -->
+	<a href="#four" onclick="coldAdd();" class="w3-btn w3-red w3-round"> Yes </a> <!-- /this shows a round red button reading yes -->
+	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-green w3-round"> No </a> <!-- /this shows a round green button reading no -->
+</div>
+<!-- /this creates a line break in the website -->
+	
+</div>
+</div>
+<!-- /this creates a line break in the website -->
+
+<div class="page" id="four">
+	<!-- /this classifies the page as being page four -->	
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question #4</h1> <!-- /this reads the title of the first page as question 4 -->
+	</div>
+	<!-- /this creates a line break in the website -->
+	
+	<div id="content" class="w3-container">
+	<p>Are your symptoms seasonal or chronical?</p> <!-- /this reads the content of question 4 asking if your symptoms are seasonal or chronical -->
+	<a href="#five" onclick="allergyAdd();" class="w3-btn w3-red w3-round"> Yes </a> <!-- /this shows a round red button reading yes -->
+	<a href="#five" onclick="coldAdd();" class="w3-btn w3-green w3-round"> No </a> <!-- /this shows a round green button reading no -->
+</div> 
+</div>
+</div>
+<!-- /this creates a line break in the website -->
+
+<div class="page" id="five">
+	<!-- /this classifies the page as being page five -->	
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results Proccessing</h1> <!-- /this reads the title of the first page as results processing -->
+	</div>
+	<!-- /this creates a line break in the website -->
+	
+	<div id="content" class="w3-container">
+	<a href="#six" onclick="results();" class="w3-btn w3-green w3-round"> Click here to view results </a> <!-- /this shows a round green button reading click here to view results -->
+		
+</div>
+</div>
+<!-- /this creates a line break in the website -->
+
+<div class="page" id="six">
+	<!-- /this classifies the page as being page six -->	
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results!!</h1> <!-- /this reads the title of the first page as results -->
+	</div>
+	<!-- /this creates a line break in the website -->
+	
+	<div id="content" class=w3=container">
+		 <p id="results"></p>  <!-- /this displays the result of function here -->
+
+	
+</div><!-- /content -->
+</div>
+<!-- /this creates a line break in the website -->
+	
+</footer class="w3-bottom w3-container w3-flat-carrot">
+<!-- /this creates a footer in the website on every page -->
+	<p>DIY!</p>
+
+</footer>
+	
+</body>
+</html>
